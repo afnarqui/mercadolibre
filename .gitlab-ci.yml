@@ -1,0 +1,32 @@
+image: node:12-alpine
+
+stages:
+ - build
+ - test
+ - deploy
+
+cache:
+  paths:
+   - node_modules/
+   - build/
+
+build:
+  stage: build
+  script:
+   - yarn
+   - yarn build
+
+test:
+  stage: test
+  script:
+  - yarn test
+
+deploy:
+  stage: deploy
+  before_script:
+   - npm i -g firebase-tools
+  script:
+   - firebase use mercadolibreprueba --token 1//0541jDyrhiaWPCgYIARAAGAUSNwF-L9IrUgOV8LHbsg2Yoq4dyOUpgho_2IC1wsEVcbZQ399pC3puUO2meqCgX-pDuygW3B2Xqx4
+   - firebase deploy --only hosting:mercadolibreprueba -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID @Hash ${CI_COMMIT_SHA:0:7}" --token 1//0541jDyrhiaWPCgYIARAAGAUSNwF-L9IrUgOV8LHbsg2Yoq4dyOUpgho_2IC1wsEVcbZQ399pC3puUO2meqCgX-pDuygW3B2Xqx4
+  only:
+   - develop
