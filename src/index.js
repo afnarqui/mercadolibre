@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
-import { Home } from './components/views/Home'
 
-ReactDOM.render(<Home />, document.getElementById('app'))
+const Home = React.lazy(() => import('./components/views/Home'))
+
+ReactDOM.render(<Suspense fallback={ <div /> }><Home /></Suspense>, document.getElementById('app'))
