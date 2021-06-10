@@ -1,3 +1,6 @@
+const { expect } = require("@jest/globals")
+
 test('console log', () => {
-    console.log('hola')
+    expect('hola').toBe('hola')
+    expect(1).toBe(1)
 })
