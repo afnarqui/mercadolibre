@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals"
+
 test('console log', () => {
-    console.log('hola')
+    expect('hola').toBe('hola')
 })
