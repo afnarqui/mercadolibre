@@ -27,6 +27,15 @@ npm install
 npm start
 ```
 
+````bash
+git pull
+git branch 1-cu4-crear-proyecto-base origin/1-cu4-crear-proyecto-base
+git checkout 1-cu4-crear-proyecto-base
+git add .
+git commit -m "implemento la forma de trabajar con las ramas"
+git push
+````
+
 [afn]: <https://gitlab.com/afnarqui/mercadolibre>
 
    
