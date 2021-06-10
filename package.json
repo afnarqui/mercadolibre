@@ -1,0 +1,30 @@
+{
+  "name": "mercadolibre",
+  "version": "1.0.0",
+  "description": "Mercado Libre es una aplicación, creada para buscar productos. desarrollada en React, utilizando las siguientes tecnologías:",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "dev": "webpack server --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/afnarqui/mercadolibre.git"
+  },
+  "author": "Andrés Felipe Naranjo Quintero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/afnarqui/mercadolibre/issues"
+  },
+  "homepage": "https://gitlab.com/afnarqui/mercadolibre#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
