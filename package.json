@@ -1,12 +1,13 @@
 {
   "name": "mercadolibre",
   "version": "1.0.0",
-  "description": "Mercado Libre es una aplicación, creada para buscar productos. desarrollada en React, utilizando las siguientes tecnologías:",
+  "description": "Mercado Libre es una aplicación, creada para buscar productos. desarrollada en React",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack server --mode=development",
-    "test": "jest"
+    "test": "jest",
+    "serve": "webpack --mode=development && npx serve dist -s"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,15 @@
     "@babel/core": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "babel-jest": "^27.0.2"
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "dependencies": {
     "react": "^17.0.2",
