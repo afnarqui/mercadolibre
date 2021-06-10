@@ -4,7 +4,7 @@
   "description": "Mercado Libre es una aplicación, creada para buscar productos. desarrollada en React, utilizando las siguientes tecnologías:",
   "main": "index.js",
   "scripts": {
-    "build": "GENERATE_SOURCEMAP=false webpack --mode=development",
+    "build": "webpack --mode=production",
     "dev": "webpack server --mode=development",
     "test": "jest"
   },
