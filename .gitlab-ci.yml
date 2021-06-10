@@ -26,7 +26,7 @@ deploy:
   before_script:
    - npm i -g firebase-tools
   script:
-   - firebase use mercadolibreprueba --token 1//0541jDyrhiaWPCgYIARAAGAUSNwF-L9IrUgOV8LHbsg2Yoq4dyOUpgho_2IC1wsEVcbZQ399pC3puUO2meqCgX-pDuygW3B2Xqx4
-   - firebase deploy --only hosting:mercadolibreprueba -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID @Hash ${CI_COMMIT_SHA:0:7}" --token 1//0541jDyrhiaWPCgYIARAAGAUSNwF-L9IrUgOV8LHbsg2Yoq4dyOUpgho_2IC1wsEVcbZQ399pC3puUO2meqCgX-pDuygW3B2Xqx4
+   - firebase use mercadolibreprueba --token 1//05STSpTz4psQtCgYIARAAGAUSNwF-L9IrCnLCqha99sHbpo_M9TjxN_O0hVX_ZeacbWF0uxPC_6sgyThdkJnD2MQlbHvJ7TUry_0
+   - firebase deploy --only hosting:mercadolibreprueba -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID @Hash ${CI_COMMIT_SHA:0:7}" --token 1//05STSpTz4psQtCgYIARAAGAUSNwF-L9IrCnLCqha99sHbpo_M9TjxN_O0hVX_ZeacbWF0uxPC_6sgyThdkJnD2MQlbHvJ7TUry_0
   only:
    - develop
