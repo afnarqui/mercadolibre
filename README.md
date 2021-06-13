@@ -1,5 +1,14 @@
 # Mercado Libre
 
+### Progressive web apps (PWA) 
+[![N|Solid](https://trello-attachments.s3.amazonaws.com/60c283c1df300327eb467b25/1106x297/e9d67cff7cdb62c4d74d759812cf862b/image.png)](https://trello-attachments.s3.amazonaws.com/60c283c1df300327eb467b25/1106x297/e9d67cff7cdb62c4d74d759812cf862b/image.png)
+
+### integración y distribución continuas (CI/CD)
+[![N|Solid](https://trello-attachments.s3.amazonaws.com/60c235c9add3901655e24b4c/60c283c1df300327eb467b25/dd9f1911afc8eec7860601b883810452/image.png)](https://trello-attachments.s3.amazonaws.com/60c235c9add3901655e24b4c/60c283c1df300327eb467b25/dd9f1911afc8eec7860601b883810452/image.png)
+
+### Graph con Apollo
+[![N|Solid](https://trello-attachments.s3.amazonaws.com/60c235c9add3901655e24b4c/60c2c71b8c2ec06d3e03b1b4/acf0c7307a0b653555bd557e01589e62/image.png)](https://trello-attachments.s3.amazonaws.com/60c235c9add3901655e24b4c/60c2c71b8c2ec06d3e03b1b4/acf0c7307a0b653555bd557e01589e62/image.png)
+
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Mercado Libre es una aplicación, creada para buscar productos. desarrollada en React, utilizando las siguientes tecnologías:

@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path')
 
 module.exports = {
@@ -37,7 +37,13 @@ module.exports = {
                     }
                   }
                 ]
-              })
+              }),
+              new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                // both options are optional
+                filename: "[name].css",
+                chunkFilename: "[id].css",
+              })              
     ],
     module: {
         rules: [
@@ -53,7 +59,24 @@ module.exports = {
                                         ]
                                 }
                         }
-                }
+                },
+                {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                          "style-loader",
+                          {
+                            loader: "css-loader",
+                            options: {
+                              sourceMap: true,
+                            },
+                          },
+                          {
+                            loader: "sass-loader",
+                            options: {
+                              sourceMap: true,
+                            },
+                          },
+                        ]}             
         ]
         }
 }
