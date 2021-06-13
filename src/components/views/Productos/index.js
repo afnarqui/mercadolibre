@@ -40,23 +40,24 @@ query obtenerUnProducto {
   }
 `
 
-const HomeComponent = (props) => {
+const ProductosComponent = () => {
     const  {data, loading, error} = useQuery(QUERY);
     console.log(data)
-
+    console.log(loading)
+    console.log(error)
     if (loading) {
         return (
             <>
-                <h1>Cargando....</h1>
+                <h1>Cargando...</h1>
             </>
         )
-        
-    } 
+    }
     return (
         <>
-            <h1>Home</h1>
+            <h1>Productos</h1>
         </>
-    );
-};
+    )
+}
 
-export default React.memo(HomeComponent);
+// export const Productos = ProductosComponent;
+export default React.memo(ProductosComponent);
