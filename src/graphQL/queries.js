@@ -49,6 +49,10 @@ export const QUERY_DETAILS = gql`
       sold_quantity
       price
       plain_text
+      path_from_root {
+        id 
+        name
+      }
     }
   }
 `

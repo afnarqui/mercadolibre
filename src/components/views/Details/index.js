@@ -4,6 +4,7 @@ import { QUERY_DETAILS } from '../../../graphQL/queries';
 import { SearchContext } from '../../../server/searchContext';
 import { useLocation } from 'react-router-dom';
 import './style.scss';
+import { Categories } from '../Categories';
 
 const Details = ({id}) => {
    const { searchPath } = useContext(SearchContext)
@@ -40,6 +41,11 @@ const Details = ({id}) => {
  
     return (
         <>
+            {
+                display && (
+                    <Categories path_from_root={data.obtenerDetalleId[0]['path_from_root']} />
+                )
+            }
             {
                 display && (
                 <div className="details">
