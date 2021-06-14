@@ -8,9 +8,6 @@ import { HomeComponent } from './components/views/Home';
 
 // Estilos generales de la aplicación.
 import './styles/main.scss';
-// primero inicialice los objetos que son críticos para la interfaz de usuario y 
-// luego silenciosamente los elementos no críticos
-
 
 ReactDOM.render(
     // Mejora la carga de datos con Suspense
@@ -19,6 +16,6 @@ ReactDOM.render(
         <ApolloProvider client={client}>
             < HomeComponent />
         </ApolloProvider>
-    </Suspense>
+     </Suspense>
     ,
      document.getElementById('app'))

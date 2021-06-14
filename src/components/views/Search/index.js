@@ -1,14 +1,19 @@
-import React from 'react';
-import queryString from 'query-string';
-import { useSearch } from '../../../hooks/search/useSearch';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSearch } from '../../../hooks/search/useSearch';
+import queryString from 'query-string';
+import { SearchContext } from '../../../server/searchContext';
+import Products from '../Products';
 
 // Estilos de Search en la aplicación.
 import './style.scss';
 
-export const Search = ({history})=> {
+const Search = ({history})=> {
     // hooks que permite sacar el valor del query string
     const location = useLocation();
+
+    const [ display, setDisplay ] = useState(true);
+    
     const { q = '' } = queryString.parse( location.search );
     // hooks personalizado para manipular el dato del buscador
     const [ formValues, handleChange, reset ] = useSearch({
@@ -16,14 +21,28 @@ export const Search = ({history})=> {
     })
 
     const { searchText } = formValues
+    const [ loadings, setLoadings ] = useState(false);
+
+    const { setSearchPath } = useContext(SearchContext);
 
     // se ejecuta al dar enter en el input y/o dar clic en el icono buscar
     const handleSearch = (e) => {
         e.preventDefault();
         history.push(`items?search=${ searchText }`);
-        console.log(searchText);
-        reset();
+        setLoadings(true);
+        setDisplay(true);
+        setSearchPath(
+            {
+                path: `items?search=${ searchText }`
+            }
+        )
     }
+
+    useEffect(() => {
+        if(location.pathname.includes('/items/')) {
+            setDisplay(false);
+        }
+    }, [location])
 
     return(
         <>
@@ -43,6 +62,11 @@ export const Search = ({history})=> {
             </form>
             </div>
         </div>
+           {
+               loadings && display && <Products formValues={formValues} />
+           }
         </>
     )
 }
+
+export default React.memo(Search);

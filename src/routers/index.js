@@ -8,7 +8,7 @@ import {
 
 import Details from '../components/views/Details';
 import Products from '../components/views/Products';
-import { Search } from '../components/views/Search';
+import Search from '../components/views/Search';
 
 import { createBrowserHistory } from "history";
 
@@ -20,7 +20,6 @@ export const RouterComponent = () => {
             <div>
                 <Search history={history} />
                 <Switch>
-                    <Route exact path="/" component={ Products } /> 
                     <Route exact path="/items" component={ Products } /> 
                     <Route exact path="/items/:id" component={ Details } />
                     <Redirect to="/" />

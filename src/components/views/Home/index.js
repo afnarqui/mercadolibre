@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RouterComponent } from '../../../routers'
+import { SearchContext } from '../../../server/searchContext';
 
 export const HomeComponent = (props) => {
 
+  const [ searchPath, setSearchPath ] = useState({ path: ''})
+
   return (
-       <RouterComponent />
+    // implemento un useContext el cual va a permitir 
+    // compartir información en todos los componentes
+       <SearchContext.Provider value={{
+          searchPath,
+          setSearchPath
+       }}>
+          <RouterComponent />
+       </SearchContext.Provider>
     );
 };
