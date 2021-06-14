@@ -40,7 +40,7 @@ query obtenerUnProducto {
   }
 `
 
-const ProductosComponent = () => {
+const ProductsComponent = () => {
     const  {data, loading, error} = useQuery(QUERY);
     console.log(data)
     console.log(loading)
@@ -54,10 +54,9 @@ const ProductosComponent = () => {
     }
     return (
         <>
-            <h1>Productos</h1>
+            <h1>Products</h1>
         </>
     )
 }
 
-// export const Productos = ProductosComponent;
-export default React.memo(ProductosComponent);
+export default React.memo(ProductsComponent);

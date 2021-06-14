@@ -76,7 +76,10 @@ module.exports = {
                               sourceMap: true,
                             },
                           },
-                        ]}             
+                        ]}                               
         ]
-        }
+        },
+        devServer: {
+          historyApiFallback: true,
+        }        
 }
