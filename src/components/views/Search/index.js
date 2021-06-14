@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useSearch } from '../../../hooks/search/useSearch';
 import queryString from 'query-string';
 import { SearchContext } from '../../../server/searchContext';
+
 import Products from '../Products';
 
 // Estilos de Search en la aplicación.
@@ -12,23 +13,26 @@ const Search = ({history})=> {
     // hooks que permite sacar el valor del query string
     const location = useLocation();
 
+    // buscamos el valor que tiene el useContext
+    const { searchPath ,setSearchPath } = useContext(SearchContext)
+
     const [ display, setDisplay ] = useState(true);
     
     const { q = '' } = queryString.parse( location.search );
     // hooks personalizado para manipular el dato del buscador
-    const [ formValues, handleChange, reset ] = useSearch({
+    const [ formValues, handleChange ] = useSearch({
         searchText: q
     })
 
     const { searchText } = formValues
     const [ loadings, setLoadings ] = useState(false);
 
-    const { setSearchPath } = useContext(SearchContext);
-
     // se ejecuta al dar enter en el input y/o dar clic en el icono buscar
     const handleSearch = (e) => {
         e.preventDefault();
-        history.push(`items?search=${ searchText }`);
+        if ( searchText.trim().length > 2 ) {
+            history.push(`/items?search=${searchText}`);
+        }
         setLoadings(true);
         setDisplay(true);
         setSearchPath(
@@ -39,8 +43,12 @@ const Search = ({history})=> {
     }
 
     useEffect(() => {
-        if(location.pathname.includes('/items/')) {
-            setDisplay(false);
+        if(location.pathname.includes('/items/items/')) {
+            history.push(`${searchPath.path}`)
+        } else {
+            if(location.pathname.includes('/items/')) {
+                setDisplay(false);
+            }
         }
     }, [location])
 

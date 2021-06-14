@@ -38,3 +38,17 @@ query obtenerProductos($input: ProductoInput!) {
     }
 }
   `
+
+export const QUERY_DETAILS = gql`
+  query obtenerDetalleId($input: DetailsInput!) {
+    obtenerDetalleId(input: $input) {
+      id
+      title
+      thumbnail
+      condition
+      sold_quantity
+      price
+      plain_text
+    }
+  }
+`
