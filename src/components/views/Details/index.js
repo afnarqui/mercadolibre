@@ -34,7 +34,8 @@ const Details = ({id}) => {
    if (loading) {
     return (
         <>
-            <h1>Cargando...</h1>
+            <div className="loading">
+            </div>
         </>
     )
     }

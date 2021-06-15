@@ -18,7 +18,7 @@ const ProductsComponent = ({ formValues }) => {
     if (loading) {
         return (
             <>
-                <h1>Cargando...</h1>
+                <h1 className="loading">Cargando...</h1>
             </>
         )
     }
