@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from "react-router-dom";
-import { SearchContext } from '../../../server/searchContext';
+import { SearchContext } from '../../../config/searchContext';
 import './style.scss';
 
 const ProductListComponent = ({ items }) => {

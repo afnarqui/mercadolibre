@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 // Envuelve toda la aplicación y nos permite acceder al cliente desde cualquier parte del árbol de componentes.
 import { ApolloProvider } from '@apollo/client';
 // Configuración que permite conectarse a Apollo client.
-import client from './server/apollo';
+import client from './config/apollo';
 import { HomeComponent } from './components/views/Home';
 
 // Estilos generales de la aplicación.

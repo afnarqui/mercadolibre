@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_DETAILS } from '../../../graphQL/queries';
-import { SearchContext } from '../../../server/searchContext';
+import { SearchContext } from '../../../config/searchContext';
 import { useLocation } from 'react-router-dom';
 import './style.scss';
 import { Categories } from '../Categories';

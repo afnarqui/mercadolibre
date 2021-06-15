@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RouterComponent } from '../../../routers'
-import { SearchContext } from '../../../server/searchContext';
+import { SearchContext } from '../../../config/searchContext';
 
 export const HomeComponent = (props) => {
 

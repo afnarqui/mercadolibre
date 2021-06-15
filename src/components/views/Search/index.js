@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSearch } from '../../../hooks/search/useSearch';
 import queryString from 'query-string';
-import { SearchContext } from '../../../server/searchContext';
+import { SearchContext } from '../../../config/searchContext';
 
 import Products from '../Products';
 
