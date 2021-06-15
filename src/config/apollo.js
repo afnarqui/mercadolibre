@@ -5,7 +5,7 @@ const client = new ApolloClient({
     connectToDevTools: true,
     cache: new InMemoryCache(),
     link: new HttpLink({
-        uri: 'http://34.71.237.203:4000/',
+        uri: 'https://cc3ba3245831.ngrok.io',
         fetch
     }) 
 });
