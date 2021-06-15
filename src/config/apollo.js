@@ -5,7 +5,7 @@ const client = new ApolloClient({
     connectToDevTools: true,
     cache: new InMemoryCache(),
     link: new HttpLink({
-        uri: 'http://localhost:4000/',
+        uri: 'http://34.71.237.203:4000/',
         fetch
     }) 
 });
